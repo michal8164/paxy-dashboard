@@ -1,0 +1,42 @@
+{
+  "name": "Customer.json",
+  "type": "object",
+  "properties": {
+    "company_name": {
+      "type": "string",
+      "description": "Company name"
+    },
+    "contact_email": {
+      "type": "string",
+      "description": "Primary contact email"
+    },
+    "api_key": {
+      "type": "string",
+      "description": "Customer API key"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "inactive",
+        "suspended"
+      ],
+      "default": "active"
+    },
+    "total_parcels_sent": {
+      "type": "number",
+      "default": 0
+    },
+    "api_calls_this_month": {
+      "type": "number",
+      "default": 0
+    },
+    "country": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "company_name",
+    "contact_email"
+  ]
+}

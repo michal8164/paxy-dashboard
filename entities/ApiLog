@@ -1,0 +1,80 @@
+{
+  "name": "ApiLog.json",
+  "type": "object",
+  "properties": {
+    "parcel_id": {
+      "type": "string",
+      "description": "Reference to parcel (if applicable)"
+    },
+    "tracking_number": {
+      "type": "string"
+    },
+    "customer_id": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string",
+      "enum": [
+        "inbound",
+        "outbound"
+      ],
+      "description": "inbound = from customer, outbound = to/from carrier"
+    },
+    "endpoint": {
+      "type": "string",
+      "description": "API endpoint called"
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "GET",
+        "POST",
+        "PUT",
+        "DELETE",
+        "PATCH"
+      ]
+    },
+    "request_body": {
+      "type": "string",
+      "description": "JSON string of request"
+    },
+    "response_body": {
+      "type": "string",
+      "description": "JSON string of response"
+    },
+    "status_code": {
+      "type": "number"
+    },
+    "response_time_ms": {
+      "type": "number"
+    },
+    "source": {
+      "type": "string",
+      "enum": [
+        "customer_api",
+        "carrier_dhl",
+        "carrier_ups",
+        "carrier_fedex",
+        "carrier_dpd",
+        "carrier_gls",
+        "carrier_postnl",
+        "carrier_hermes",
+        "carrier_tnt",
+        "carrier_colissimo",
+        "carrier_inpost",
+        "webhook"
+      ]
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "direction",
+    "endpoint",
+    "method",
+    "status_code",
+    "timestamp"
+  ]
+}

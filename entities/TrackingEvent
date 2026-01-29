@@ -1,0 +1,51 @@
+{
+  "name": "TrackingEvent.json",
+  "type": "object",
+  "properties": {
+    "parcel_id": {
+      "type": "string",
+      "description": "Reference to parcel"
+    },
+    "tracking_number": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "created",
+        "picked_up",
+        "departed_facility",
+        "arrived_facility",
+        "customs_clearance",
+        "out_for_delivery",
+        "delivered",
+        "delivery_attempt",
+        "exception",
+        "returned"
+      ],
+      "description": "Type of tracking event"
+    },
+    "status": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string",
+      "description": "Location where event occurred"
+    },
+    "description": {
+      "type": "string"
+    },
+    "event_timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "carrier_code": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "parcel_id",
+    "event_type",
+    "event_timestamp"
+  ]
+}
